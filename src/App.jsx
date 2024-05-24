@@ -1,13 +1,13 @@
-import Navbar from "./components/navbar.jsx";
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppContent from './AppContent';
 
 function App() {
-
     return (
-        <div className="h-full">
-            <Navbar/>
-
-        </div>
-    )
+        <Router>
+            <AppContent />
+        </Router>
+    );
 }
 
-export default App
+export default App;
