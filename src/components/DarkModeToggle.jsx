@@ -2,7 +2,13 @@ import {useEffect, useState} from "react";
 import {FaMoon, FaSun} from "react-icons/fa";
 
 const DarkModeToggle = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        // Check initial theme preferences from localStorage
+        const savedTheme = localStorage.getItem("darkMode");
+        return savedTheme === 'true';
+    });
+
+    // const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
        const htmlElement = document.documentElement;
@@ -11,6 +17,8 @@ const DarkModeToggle = () => {
        } else {
            htmlElement.classList.remove('dark');
        }
+
+       localStorage.setItem('darkMode', isDarkMode.toString());
     }, [isDarkMode])
 
     const handleToggle = () => {
