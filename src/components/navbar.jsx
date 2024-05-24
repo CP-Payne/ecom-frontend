@@ -17,6 +17,11 @@ const Navbar = () => {
     //    setIsOpen(false)
     // }
 
+    const closeMenu = () => {
+        setIsOpen(false);
+    }
+
+
     const handleLoginClick= () => {
         // setActiveLink('');
         navigate('/login');
@@ -51,6 +56,7 @@ const Navbar = () => {
                             <li key={link}>
                                 <NavLink
                                     to={`${link.toLowerCase()}`}
+                                    onClick={closeMenu}
                                 className={({ isActive }) => `block py-2 px-3 rounded md:p-0 ${
                                     isActive
                                         ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-blue-500'
