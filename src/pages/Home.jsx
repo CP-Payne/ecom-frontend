@@ -1,6 +1,11 @@
+import ProductList from "./ProductList.jsx";
+
 const Home = () => {
     return (
-        <div>Home</div>
+        <div>
+            <ProductList />
+        </div>
+
     )
 }
 export default Home
